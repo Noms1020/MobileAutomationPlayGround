@@ -59,4 +59,8 @@ public class ProfilePage {
     {
         GetLocators(MyProfileNativeLocator,MyProfileWebLocator).click();
     }
+    public void clickEditProfileButton()
+    {
+        GetLocators(EditProfileNativeLocator,EditProfileWebLocator).click();
+    }
 }

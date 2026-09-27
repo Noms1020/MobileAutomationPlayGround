@@ -14,4 +14,9 @@ public class ProfileTest extends Base.BaseTest {
     {
         profilePage.clickMyProfileButton();
     }
+    @Test(dependsOnMethods = "clickMyProfileButtonTest")
+    public void clickEditProfileButtonTest()
+    {
+        profilePage.clickEditProfileButton();
+    }
 }
