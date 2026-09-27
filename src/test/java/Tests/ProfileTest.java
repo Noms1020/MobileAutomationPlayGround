@@ -9,4 +9,9 @@ public class ProfileTest extends Base.BaseTest {
     {
         profilePage.clickMenuButton();
     }
+    @Test(dependsOnMethods = "clickMenuButtonTest")
+    public void clickMyProfileButtonTest()
+    {
+        profilePage.clickMyProfileButton();
+    }
 }

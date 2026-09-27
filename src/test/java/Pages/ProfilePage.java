@@ -31,6 +31,10 @@ public class ProfilePage {
 
     private By MenuButtonNativeLocator = By.xpath("//android.widget.Button");
     private By MenuButtonWebLocator = By.xpath("//button[@class='nav-mobile-account']");
+    private  By MyProfileNativeLocator = By.xpath("//android.widget.Button[@content-desc=\"My Profile\"]");
+    private  By MyProfileWebLocator = By.xpath("//span[text()='My Profile']");
+    private By EditProfileNativeLocator = By.xpath("//android.widget.Button[@content-desc=\"Edit Profile\"]");
+    private By EditProfileWebLocator = By.xpath("//button[normalize-space()='✏\uFE0F Edit Profile']");
 
 
     private WebElement GetLocators(By nativeLocator, By webLocator)
@@ -50,5 +54,9 @@ public class ProfilePage {
     {
         GetLocators(MenuButtonNativeLocator,MenuButtonWebLocator).click();
 
+    }
+    public void clickMyProfileButton()
+    {
+        GetLocators(MyProfileNativeLocator,MyProfileWebLocator).click();
     }
 }
