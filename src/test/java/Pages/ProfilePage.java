@@ -35,6 +35,10 @@ public class ProfilePage {
     private  By MyProfileWebLocator = By.xpath("//span[text()='My Profile']");
     private By EditProfileNativeLocator = By.xpath("//android.widget.Button[@content-desc=\"Edit Profile\"]");
     private By EditProfileWebLocator = By.xpath("//button[normalize-space()='✏\uFE0F Edit Profile']");
+    private By ProfilePictureNativeLocator = By.xpath("//android.view.View[@content-desc=\"NM\"]");
+    private By ProfilePictureWebLocator = By.xpath("//input[@id='profilePicture']");
+    private By SelectProfilePictureNativeLocator = By.xpath("(//android.widget.ImageView[@resource-id=\"com.google.android.providers.media.module:id/icon_thumbnail\"])[1]");
+
 
 
     private WebElement GetLocators(By nativeLocator, By webLocator)
@@ -62,5 +66,15 @@ public class ProfilePage {
     public void clickEditProfileButton()
     {
         GetLocators(EditProfileNativeLocator,EditProfileWebLocator).click();
+    }
+
+    public void clickProfilePictureButton()
+    {
+        GetLocators(ProfilePictureNativeLocator,ProfilePictureWebLocator).click();
+    }
+
+    public void uploadProfilePicture()
+    {
+        GetLocators(SelectProfilePictureNativeLocator,ProfilePictureWebLocator).click();
     }
 }

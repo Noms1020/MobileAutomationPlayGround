@@ -47,10 +47,10 @@ public class BaseTest {
         Assert.assertTrue(loginPage.isLoginSuccess(),"Login was unsuccessfully"
         );
     }
-    @AfterClass
-    public void tearDown(){
-        DriverFactory.quitDriver();
-    }
+//    @AfterClass
+//    public void tearDown(){
+//        DriverFactory.quitDriver();
+//    }
 
 
 }
