@@ -1,6 +1,11 @@
 package Tests;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 public class ProfileTest extends Base.BaseTest {
 
@@ -25,8 +30,11 @@ public class ProfileTest extends Base.BaseTest {
         profilePage.clickProfilePictureButton();
     }
     @Test(dependsOnMethods = "clickProfilePictureTest")
-    public void clickSelectProfilePictureTest()
-    {
+    public void clickSelectProfilePictureTest() throws InterruptedException {
         profilePage.uploadProfilePicture();
+        takeScreenshotAfterTests();
+
     }
+
+
 }

@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.Properties;
 
+import static java.lang.Thread.sleep;
+
 public class ProfilePage {
 
     AppiumDriver driver;
@@ -38,6 +40,7 @@ public class ProfilePage {
     private By ProfilePictureNativeLocator = By.xpath("//android.view.View[@content-desc=\"NM\"]");
     private By ProfilePictureWebLocator = By.xpath("//input[@id='profilePicture']");
     private By SelectProfilePictureNativeLocator = By.xpath("(//android.widget.ImageView[@resource-id=\"com.google.android.providers.media.module:id/icon_thumbnail\"])[1]");
+    //private  By  SelectProfilePictureNativeLocator = By.xpath("//android.widget.ImageView[contains(@content-desc,'IMG_20260927_164704')]");
 
 
 
@@ -73,8 +76,9 @@ public class ProfilePage {
         GetLocators(ProfilePictureNativeLocator,ProfilePictureWebLocator).click();
     }
 
-    public void uploadProfilePicture()
-    {
+    public void uploadProfilePicture() throws InterruptedException {
         GetLocators(SelectProfilePictureNativeLocator,ProfilePictureWebLocator).click();
+
+        sleep(5000); // Wait for 2 seconds to ensure the upload is complete
     }
 }
